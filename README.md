@@ -8,3 +8,8 @@ https://owasp.org/www-community/attacks/SQL_Injection</code>
 
 ## SQL In-Band or SQLi
 This attack occurs when the attacker uses the same communication channel to carry out attacks and obtain responses. An example of this is **error-based SQLi**, which triggers an error message when trying to use an SQL payload. The other format is **UNION-based SQLi**, in which using the SQL UNION database operator results in multiple SELECT statements in just one response.
+
+Example: 
+```sql
+ UNION SELECT 1
+```
